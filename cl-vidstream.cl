@@ -35,7 +35,7 @@
 
 (defun getSearchResults(term)
   (let ((html (getSearchHtml term)))
-    (return-from getSearchResults (lquery:$ html "a" (combine (attr :href) (text))))))
+  (lquery:$ html "a" (combine (attr :href) (text)))))
 
 ;;; Downloading
 (defun getEpisodeUrl(searchResults i) 
@@ -43,8 +43,7 @@
 
 (defun getStreamingUrl(episodeUrl) 
   (let ((html (getHtmlRequest episodeUrl)))
-    (return-from getStreamingUrl (format nil "https:~A" (aref (lquery:$ html "iframe" (attr :src)) 0)))
-  ))
+  (format nil "https:~A" (aref (lquery:$ html "iframe" (attr :src)) 0))))
 
 (defun getStreamingHtml(url)
   (getHtmlRequest (getStreamingUrl url) *NO_HEADERS*))
