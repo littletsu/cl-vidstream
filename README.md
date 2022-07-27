@@ -2,7 +2,7 @@
 Common Lisp functions to search and get m3u8 videos from vidstreaming<br>
 Loading in SBCL:
 ```
-sbcl --load ./cl-vidstream/vidstream.cl
+sbcl --load ./cl-vidstream/cl-vidstream.cl
 ```
 <br>
 Main functionality example:
